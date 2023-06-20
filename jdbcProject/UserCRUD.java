@@ -23,12 +23,13 @@ public class UserCRUD {
 
 	public void signUser(User user) throws Exception {
 		Connection connection = getConnection();
-		PreparedStatement preparedstatement = connection.prepareStatement("insert into user values(?,?,?,?,?,?,?,?,?,?)");
+		PreparedStatement preparedstatement = connection.prepareStatement("insert into user(id,username,email,password,address) values(?,?,?,?,?)");
 		preparedstatement.setInt(1, user.getId());
 		preparedstatement.setString(2, user.getUsername());
+		preparedstatement.setString(3, user.getEmail());
 		preparedstatement.setString(4, user.getPassword());
 		preparedstatement.setString(5, user.getAddress());
-		preparedstatement.setString(3, user.getEmail());
+		
 		preparedstatement.execute();
 		connection.close();
 		System.out.println("Sign in successfull!!!");
