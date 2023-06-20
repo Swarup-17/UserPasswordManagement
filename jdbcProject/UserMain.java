@@ -30,7 +30,7 @@ public class UserMain {
 				String email=scanner.next();
 				System.out.println("enter the password");
 				String password=scanner.next();
-				System.out.println("enter the adress");
+				System.out.println("enter the address");
 				String address=scanner.next();	
 				
 				user.setId(id);
